@@ -328,7 +328,7 @@ def startNN():
 
         # accuracies.clear()
 
-        # model
+        # 1) cikk CNN end2end modell
         # data set szerkezet -> mátrix: (adat darabszám x csatornaszám x idő)
         # NEEG -> number of channels
         # N -> length of the input (az idő fogja meghatározni)
@@ -343,6 +343,7 @@ def startNN():
         # model.add(layers.Dense(units=64, activation="relu"))  # activation func
         # model.add(layers.Dense(units=5))
 
+        #2) cikk 1D CNN modell
         model = keras.models.Sequential()
         model.add(layers.Conv1D(filters=32, kernel_size=20, padding="same", activation="relu", input_shape=(64, 321)))
         model.add(layers.BatchNormalization())
